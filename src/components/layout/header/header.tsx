@@ -40,7 +40,6 @@ const Header = () => {
   const accountRef = useRef<HTMLDivElement>(null);
   const accountRef2 = useRef<HTMLDivElement>(null);
 
-  // ── Hamburger / overlay / mobile accordion ──────────────────
   useEffect(() => {
     let overlay = document.querySelector(".menu-overlay") as HTMLElement | null;
     if (!overlay) {
