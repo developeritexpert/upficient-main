@@ -2,6 +2,7 @@
 import { getImagePath } from "@/services/common.service";
 import {
   faBars,
+  faXmark,
   faUser,
   faBuilding,
   faGear,
@@ -37,44 +38,31 @@ import "./header.scss";
 
 const Header = () => {
   const [accountOpen, setAccountOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const accountRef = useRef<HTMLDivElement>(null);
   const accountRef2 = useRef<HTMLDivElement>(null);
 
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+    document
+      .querySelectorAll(".has-mega-menu.mobile-open")
+      .forEach((el) => el.classList.remove("mobile-open"));
+  };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen((prev) => !prev);
+  };
+
+  // Lock body scroll while the mobile menu is open
   useEffect(() => {
-    let overlay = document.querySelector(".menu-overlay") as HTMLElement | null;
-    if (!overlay) {
-      overlay = document.createElement("div");
-      overlay.className = "menu-overlay";
-      document.body.appendChild(overlay);
-    }
-
-    const hamburger = document.querySelector(".hamburger-menu");
-    const headerMenu = document.querySelector(".headerMenu") as HTMLElement | null;
-    const closeMenuBtn = document.querySelector(".close-menu");
-
-    const openMenu = () => {
-      if (overlay) {
-        overlay.style.display = "block";
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            overlay!.classList.add("visible");
-            headerMenu?.classList.add("active");
-          });
-        });
-      }
-      document.body.style.overflow = "hidden";
-    };
-
-    const closeMenu = () => {
-      headerMenu?.classList.remove("active");
-      overlay?.classList.remove("visible");
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
+    return () => {
       document.body.style.overflow = "";
     };
+  }, [mobileMenuOpen]);
 
-    hamburger?.addEventListener("click", openMenu);
-    closeMenuBtn?.addEventListener("click", closeMenu);
-    overlay?.addEventListener("click", closeMenu);
-
+  // ── Mobile accordion for mega menus ─────────────────────────
+  useEffect(() => {
     const dropdowns = document.querySelectorAll<HTMLElement>(".has-mega-menu");
 
     const handleDropdownClick = (e: Event) => {
@@ -97,15 +85,20 @@ const Header = () => {
     });
 
     return () => {
-      hamburger?.removeEventListener("click", openMenu);
-      closeMenuBtn?.removeEventListener("click", closeMenu);
-      overlay?.removeEventListener("click", closeMenu);
       dropdowns.forEach((dropdown) => {
         dropdown.removeEventListener("click", handleDropdownClick as EventListener);
       });
-      document.body.style.overflow = "";
     };
   }, []);
+
+  // ── Close mobile menu when a real nav link (not an accordion
+  //    toggle) is clicked ─────────────────────────────────────
+  const handleNavClick = (e: React.MouseEvent<HTMLElement>) => {
+    if (window.innerWidth > 992) return;
+    const target = e.target as HTMLElement;
+    if (target.closest("a.menu-link")) return; // let the accordion handle this
+    if (target.closest("a")) closeMobileMenu();
+  };
 
   // ── Close account dropdown on outside click ─────────────────
   useEffect(() => {
@@ -362,14 +355,12 @@ const Header = () => {
               <p className="mega-sidebar-group-title">{group.title}</p>
               <ul className="list-none">
                 {group.items.map((link: any, lIndex: number) => (
-                
                   <li key={lIndex}>
                     <Link href={link.href} className="mega-sidebar-link">
                       <FontAwesomeIcon icon={link.icon} />
                       {link.label}
                     </Link>
                   </li>
-                 
                 ))}
               </ul>
               <div className="sidebar-menu-group__divider"></div>
@@ -437,7 +428,6 @@ const Header = () => {
 
   return (
     <>
-
       <header id="header">
         <div className="header-wrapper">
           <Link className="headerLogo" href={"/"}>
@@ -452,13 +442,18 @@ const Header = () => {
             />
           </Link>
 
-          <button className="hamburger-menu" aria-label="Open menu">
-            <FontAwesomeIcon icon={faBars} />
+          <button
+            className="hamburger-menu"
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            onClick={toggleMobileMenu}
+          >
+            <FontAwesomeIcon icon={mobileMenuOpen ? faXmark : faBars} />
           </button>
-          <button className="close-menu" aria-label="Close menu">
-            X
-          </button>
-          <nav className="nav-list headerMenu">
+
+          <nav
+            className={`nav-list headerMenu${mobileMenuOpen ? " active" : ""}`}
+            onClick={handleNavClick}
+          >
             <ul className="menu list-none d-flex">
               {menuItems.map((item, index) => (
                 <li className="dropdown has-mega-menu" key={index}>
@@ -470,13 +465,21 @@ const Header = () => {
                 </li>
               ))}
             </ul>
-          </nav>
 
-          <Link className="book-a-call" target="_blank" href="https://calendly.com/upficient_christopher-day/intro">
-            Book a free call
-          </Link>
+            <Link
+              className="book-a-call"
+              target="_blank"
+              href="https://calendly.com/upficient_christopher-day/intro"
+            >
+              Book a free call
+            </Link>
+          </nav>
         </div>
       </header>
+
+      {mobileMenuOpen && (
+        <div className="menu-overlay" onClick={closeMobileMenu} />
+      )}
     </>
   );
 };
