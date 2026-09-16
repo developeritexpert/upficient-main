@@ -1,45 +1,39 @@
 "use client";
 import { getImagePath } from "@/services/common.service";
-import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faUser,
+  faBuilding,
+  faGear,
+  faBolt,
+  faMessage,
+  faUserTie,
+  faRocket,
+  faHeartPulse,
+  faUsers,
+  faBullhorn,
+  faHeadset,
+  faFlag,
+  faBullseye,
+  faLayerGroup,
+  faGraduationCap,
+  faChartColumn,
+  faCircleQuestion,
+  faBook,
+  faSitemap,
+  faFileLines,
+  faRobot,
+  faCompass,
+  faArrowRight,
+  faLandmark,
+  faTicket,
+  faGrip,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import "./header.scss";
-
-const ChevronDownIcon = ({ className = "" }: { className?: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="12"
-    height="12"
-    viewBox="0 0 128 128"
-    className={`mega-menu-arrow ${className}`}
-    aria-hidden="true"
-  >
-    <path
-      d="M64 88a3.988 3.988 0 0 1-2.828-1.172l-40-40c-1.563-1.563-1.563-4.094 0-5.656s4.094-1.563 5.656 0L64 78.344l37.172-37.172c1.563-1.563 4.094-1.563 5.656 0s1.563 4.094 0 5.656l-40 40A3.988 3.988 0 0 1 64 88z"
-      fill="currentColor"
-    />
-  </svg>
-);
-
-const ChevronDownIcon2 = ({ className = "" }: { className?: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="12"
-    height="12"
-    viewBox="0 0 512 512"
-    aria-hidden="true"
-    className={className}
-  >
-    <g>
-      <path
-        d="m98 190.06 139.78 163.12a24 24 0 0 0 36.44 0L414 190.06c13.34-15.57 2.28-39.62-18.22-39.62h-279.6c-20.5 0-31.56 24.05-18.18 39.62z"
-        fill="currentColor"
-      />
-    </g>
-  </svg>
-);
 
 const Header = () => {
   const [accountOpen, setAccountOpen] = useState(false);
@@ -48,7 +42,6 @@ const Header = () => {
 
   // ── Hamburger / overlay / mobile accordion ──────────────────
   useEffect(() => {
-    // 1. Create overlay element once and append to body
     let overlay = document.querySelector(".menu-overlay") as HTMLElement | null;
     if (!overlay) {
       overlay = document.createElement("div");
@@ -83,7 +76,6 @@ const Header = () => {
     closeMenuBtn?.addEventListener("click", closeMenu);
     overlay?.addEventListener("click", closeMenu);
 
-    // 2. Mobile accordion — toggle .mobile-open on dropdown <li>
     const dropdowns = document.querySelectorAll<HTMLElement>(".has-mega-menu");
 
     const handleDropdownClick = (e: Event) => {
@@ -119,8 +111,6 @@ const Header = () => {
   // ── Close account dropdown on outside click ─────────────────
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      // Check if the click was anywhere inside ANY .account-dropdown-wrapper
-      // This covers both mobile and desktop instances + their open dropdown lists
       const clickedInsideAnyDropdown = !!(e.target as HTMLElement)?.closest(
         ".account-dropdown-wrapper"
       );
@@ -132,422 +122,360 @@ const Header = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // ── Menu data, matching the live WordPress mega menus ───────
   const menuItems = [
     {
-      name: "About Us",
-      href: "#",
-      hasMegaMenu: true,
-      megaMenu: {
-        columns: [
-          {
-            icon: "Our-Agency.webp",
-            title: "Our Agency",
-            description: "What makes Upficient unique",
-            href: "/about-upficient-experts",
-          },
-          {
-            icon: "Case-Studies.webp",
-            title: "Case Studies",
-            description: "",
-            href: "/case-study",
-            singleColumn: true,
-            subItems: [
-              { label: "Digifist", href: "/digifist" },
-              { label: "Lento Agency", href: "/lento-agency" },
-              { label: "Moms for Liberty", href: "/moms-for-liberty" },
-              { label: "The Company Films", href: "/the-company-films" },
-              { label: "The Ola Agency", href: "/the-ola-agency" },
-            ],
-          },
-          {
-            icon: "FAQs.webp",
-            title: "FAQs",
-            description: "Answers to your questions",
-            href: "/faq",
-          },
-        ],
-        outcomes: [
-          "Pro-level, plug-and-play workspaces in minutes",
-          "Tested by real teams & aligned with proven frameworks",
-          "Optimized for clarity, speed & visibility",
-          "Smarter automations for fewer clicks and smoother workflows",
-          "Aligned, consistent processes across teams",
-          "Scalable systems that grow and evolve with your business",
-        ],
-      },
-    },
-    {
-      name: "ClickUp Guides",
-      href: "/clickup-guides",
-      hasMegaMenu: true,
-      megaMenu: {
-        columns: [
-          {
-            icon: "ClickUp-in-2025_-The-Ultimate-Guide.webp",
-            title: "ClickUp in 2025: The Ultimate Guide",
-            description: "Everything you need to know about ClickUp before diving in",
-            href: "/clickup-guides/clickup-in-2025-the-ultimate-guide",
-          },
-          {
-            icon: "How-to-use-ClickUp_-Full-ClickUp-Tutorial.webp",
-            title: "How to Use ClickUp: Full ClickUp Tutorial",
-            description: "A crash-course in ClickUp for new ClickUp users",
-            href: "/clickup-guides/how-to-use-clickup-full-clickup-tutorial",
-          },
-          {
-            icon: "Case-Studies.webp",
-            title: "More guides",
-            description: "Learn more about ClickUp, from software comparisons to ClickUp features",
-            href: "/clickup-guides",
-          },
-        ],
-        outcomes: [
-          "Understanding ClickUp",
-          "Software comparisons",
-          "ClickUp AI",
-          "2025 feature releases",
-          "ClickUp integrations",
-          "Workspace architecture",
-          "Advanced tips & tricks",
-        ],
-      },
-    },
-    {
-      name: "ClickUp Templates",
-      href: "/clickup-templates/",
-      hasMegaMenu: true,
-      megaMenu: {
-        columns: [
-          {
-            icon: "Store-Homepage.webp",
-            title: "Store Homepage",
-            description: "",
-            href: "/clickup-templates/",
-            isFirstRow: true,
-          },
-          {
-            icon: "Organizations.webp",
-            title: "Organizations",
-            description: "",
-            href: "/clickup-templates/product-category/organizations/",
-            subItems: [
-              { label: "Creative Agencies", href: "/clickup-templates/product-category/organizations/creative-agencies/" },
-              { label: "Recruitment & Staffing Firms", href: "/clickup-templates/product-category/organizations/recruitment-staffing/" },
-              { label: "Healthcare Services", href: "/clickup-templates/product-category/organizations/healthcare-services/" },
-              { label: "Professional Services", href: "/clickup-templates/product-category/organizations/professional-services/" },
-              { label: "Marketing Agencies", href: "/clickup-templates/product-category/organizations/marketing-agencies/" },
-              { label: "Startups & Tech Teams", href: "/clickup-templates/product-category/organizations/startups-tech-teams/" },
-            ],
-          },
-          {
-            icon: "Case-Studies.webp",
-            title: "Functions",
-            description: "",
-            href: "/clickup-templates/product-category/function/",
-            subItems: [
-              { label: "Client Fulfilment", href: "/clickup-templates/product-category/categories/client-fulfilment/" },
-              { label: "Marketing", href: "/clickup-templates/product-category/categories/marketing/" },
-              { label: "Creative & Design", href: "/clickup-templates/product-category/categories/creative-design/" },
-              { label: "Operations", href: "/clickup-templates/product-category/categories/operations/" },
-              { label: "Engineering & Product", href: "/clickup-templates/product-category/categories/engineering-product/" },
-              { label: "Project Management", href: "/clickup-templates/product-category/categories/project-management/" },
-              { label: "Support", href: "#" },
-            ],
-          },
-          {
-            icon: "Operating-Systems.webp",
-            title: "Operating Systems",
-            description: "",
-            href: "/clickup-templates/product-category/operating-systems/",
-            subItems: [
-              { label: "Objectives and Key Results (Advanced)", href: "/clickup-templates/product/objectives-and-key-results-advanced/" },
-              { label: "Objectives and Key Results (Simple)", href: "/clickup-templates/product/objectives-key-results-simple/" },
-              { label: "Lean Startup Methodology", href: "/clickup-templates/product/lean-startup-methodology/" },
-              { label: "Scaling Up (Rockefeller Method 2.0)", href: "/clickup-templates/product/scaling-up-rockefeller-method-2-0/" },
-            ],
-          },
-          {
-            icon: "Annual-Subscriptions.webp",
-            title: "Annual Subscriptions",
-            description: "",
-            href: "/clickup-templates/subscriber/",
-            singleColumn: true,
-            subItems: [
-              { label: "Premium", labelClass: "label-premium", href: "/clickup-templates/subscriber/", badge: "unlimited access to all ClickUp templates in our store" },
-              { label: "Premium Plus", labelClass: "label-premium-plus", href: "/clickup-templates/subscriber/", badge: "everything in Premium + operational systems + more" },
-            ],
-          },
-        ],
-        outcomes: [
-          "Pro-level, plug-and-play workspaces in minutes",
-          "Tested by real teams & aligned with proven frameworks",
-          "Optimized for clarity, speed & visibility",
-          "Smarter automations for fewer clicks and smoother workflows",
-          "Aligned, consistent processes across teams",
-          "Scalable systems that grow and evolve with your business",
-        ],
-      },
-    },
-    {
-      name: "Our Services",
+      name: "Services",
       href: "/our-services/",
-      hasMegaMenu: true,
-      megaMenu: {
-        columns: [
-          {
-            icon: "Services-Homepage-1.webp",
-            title: "Services Homepage",
-            description: "",
-            href: "/our-services/",
-            isFirstRow: true,
-          },
-          {
-            icon: "ClickUp-Onboarding.webp",
-            title: "ClickUp Onboarding",
-            description: "Level-up your business with a new workspace!",
-            href: "/clickup-onboarding-service/",
-          },
-          {
-            icon: "Workspace-Optimization.webp",
-            title: "Workspace Optimization",
-            description: "Supercharge your existing ClickUp workspace!",
-            href: "/clickup-workspace-optimization/",
-          },
-          {
-            icon: "Integrations-Automation.webp",
-            title: "ClickUp Integrations",
-            description: "Your ultimate solution to optimize your workflows!",
-            href: "/clickup-integrations/",
-          },
-          {
-            icon: "ClickUp-Consulting.webp",
-            title: "ClickUp Consulting",
-            description: "Integrate with other tools to streamline your workflow",
-            href: "/clickup-consultants/",
-          },
-        ],
-        outcomes: [
-          "Optimized workspace",
-          "Dashboard-first project",
-          "Feature-rich ecosystem",
-          "ClickUp AI implementation",
-          "Accurate workload",
-          "Streamlined operations",
-          "Workflow automation",
-        ],
-      },
+      type: "grid" as const,
+      sectionLabel: "Our Services",
+      cards: [
+        {
+          icon: faLandmark,
+          color: "purple",
+          title: "Workspace Architecture",
+          description: "New workspace or full restructure —hierarchy, fields, dashboards, training.",
+          href: "/clickup-workspace-optimization/",
+          badge: "Most Requested",
+        },
+        {
+          icon: faGear,
+          color: "slate",
+          title: "ClickUp for Operating Systems",
+          description: "EOS®, OKRs, Scaling Up® — built properly in ClickUp.",
+          href: "/clickup-templates/product-category/operating-systems/",
+        },
+        {
+          icon: faBolt,
+          color: "pink",
+          title: "Automation & Integrations",
+          description: "Make.com, Zapier, native ClickUp — eliminate manual work.",
+          href: "/clickup-integrations/",
+        },
+        {
+          icon: faMessage,
+          color: "amber",
+          title: "ClickUp Consulting",
+          description: "Audits, strategy, AI setup, training — on your schedule.",
+          href: "/clickup-consultants/",
+        },
+      ],
+    },
+    {
+      name: "Clickup Templates",
+      href: "/clickup-templates/",
+      type: "sidebar" as const,
+      sidebarTitle: "Browse by",
+      sidebarGroups: [
+        {
+          title: "Organisation",
+          items: [
+            { icon: faBuilding, label: "Agencies", href: "/clickup-templates/product-category/organizations/creative-agencies/" },
+            { icon: faUserTie, label: "Professional services", href: "/clickup-templates/product-category/organizations/professional-services/" },
+            { icon: faRocket, label: "Startups tech", href: "/clickup-templates/product-category/organizations/startups-tech-teams/" },
+            { icon: faHeartPulse, label: "Healthcare", href: "/clickup-templates/product-category/organizations/healthcare-services/" },
+          ],
+        },
+        {
+          title: "Function",
+          items: [
+            { icon: faUsers, label: "Client delivery", href: "/clickup-templates/product-category/categories/client-fulfilment/" },
+            { icon: faBolt, label: "Operations", href: "/clickup-templates/product-category/categories/operations/" },
+            { icon: faBullhorn, label: "Marketing", href: "/clickup-templates/product-category/categories/marketing/" },
+            { icon: faHeadset, label: "Support tickets", href: "/clickup-templates/product-category/function/support/" },
+          ],
+        },
+        {
+          title: "Operating systems",
+          items: [
+            { icon: faFlag, label: "EOS®", href: "/clickup-templates/product/scaling-up-rockefeller-method-2-0/" },
+            { icon: faBullseye, label: "OKRs", href: "/clickup-templates/product-category/operating-systems/objective-key-results-okr/" },
+            { icon: faLayerGroup, label: "+ much more", href: "/clickup-templates/product-category/operating-systems/" },
+          ],
+        },
+      ],
+      sidebarFooterLink: { label: " All templates →", href: "/clickup-templates/" },
+      listTitle: "Featured Templates",
+      listType: "template" as const,
+      listItems: [
+        {
+          icon: faGraduationCap,
+          color: "purple",
+          title: "ClickUp Onboarding Training",
+          description: "Train your team on ClickUp with a structured onboarding system and documented SOPs.",
+          tag: "Onboarding",
+          href: "/clickup-onboarding-service/",
+        },
+        {
+          icon: faBullseye,
+          color: "green",
+          title: "OKR System",
+          description: "Quarterly objectives, key results, check-ins, and leadership dashboards.",
+          tag: "Operating system",
+          href: "/clickup-workspace-optimization/",
+        },
+        {
+          icon: faBullhorn,
+          color: "pink",
+          title: "Digital Marketing Agency — Client Delivery",
+          description: "Folder-per-client structure with scoped views and automation layer.",
+          tag: "Agency",
+          href: "/clickup-templates/product-category/categories/marketing/",
+        },
+        {
+          icon: faTicket,
+          color: "pinkpurple",
+          title: "Support Tickets Hub",
+          description: "Centralise, triage, and resolve internal and external tickets.",
+          tag: "Function",
+          href: "/clickup-templates/product-category/function/support/",
+        },
+      ],
+    },
+    {
+      name: "Guides",
+      href: "/clickup-guides",
+      type: "sidebar" as const,
+      sidebarTitle: "Browse by type",
+      sidebarSimpleItems: [
+        { icon: faBook, label: "All guides", count: 7, href: "/clickup-guides" },
+        { icon: faSitemap, label: "Architecture", count: 1, href: "/clickup-guides/how-to-design-clickup-dashboards" },
+        { icon: faFileLines, label: "Template guides", count: 1, href: "/clickup-guides/clickup-in-2025-the-ultimate-guide" },
+        { icon: faRobot, label: "ClickUp AI", count: 1, href: "/clickup-guides/clickup-in-2025-the-ultimate-guide" },
+        { icon: faCompass, label: "OS guides", count: 1, href: "/clickup-guides/how-to-use-clickup-full-clickup-tutorial" },
+      ],
+      sidebarFooterLink: { label: "All guides", href: "/clickup-guides" },
+      listTitle: "Featured Guides",
+      listType: "template" as const,
+      listItems: [
+        {
+          icon: faSitemap,
+          color: "purple",
+          title: "The ClickUp Hierarchy Explained",
+          description: "Workspaces, Spaces, Folders, Lists, Tasks — what they mean and how to design them right.",
+          tag: "Tutorial · 12 min",
+          href: "/clickup-guides/how-to-use-clickup-full-clickup-tutorial",
+        },
+        {
+          icon: faRobot,
+          color: "blue",
+          title: "ClickUp Brain: A Practical Setup Guide",
+          description: "What Brain actually does, what your workspace needs before it works, how to prompt effectively.",
+          tag: "ClickUp AI · 15 min",
+          href: "/clickup-guides/clickup-in-2025-the-ultimate-guide",
+        },
+        {
+          icon: faFileLines,
+          color: "pink",
+          title: "How to Design ClickUp Dashboards That Actually Get Used",
+          description: "Dashboard-first design principle, widget selection, and data prerequisites.",
+          tag: "Architecture · 13 min",
+          href: "/clickup-guides/how-to-design-clickup-dashboards",
+        },
+        {
+          icon: faFlag,
+          color: "green",
+          title: "How to Implement EOS® in ClickUp",
+          description: "All six EOS® components built in ClickUp — a complete architecture guide.",
+          tag: "OS guide · 18 min",
+          href: "/clickup-guides/how-to-implement-eos-in-clickup",
+        },
+      ],
+    },
+    {
+      name: "About",
+      href: "/about-upficient-experts",
+      type: "sidebar" as const,
+      sidebarTitle: "Company",
+      sidebarSimpleItems: [
+        { icon: faUsers, label: "About Upficient", href: "/about-upficient-experts" },
+        { icon: faChartColumn, label: "Case studies", href: "/case-study" },
+        { icon: faCircleQuestion, label: "FAQs", href: "/faq" },
+      ],
+      listTitle: "Featured Case Studies",
+      listType: "caseStudy" as const,
+      listItems: [
+        {
+          avatarText: "Le",
+          color: "green",
+          title: "Lento Agency",
+          description: "Creative agency · Argentina · 5 engagements",
+          tag: "EOS® Implementation",
+          href: "/lento-agency",
+        },
+        {
+          avatarText: "ML",
+          color: "slate",
+          title: "Moms for Liberty",
+          description: "Political org · United States · 6 engagements",
+          tag: "Workspace Architecture",
+          href: "/moms-for-liberty",
+        },
+        {
+          avatarText: "Ba",
+          color: "purple",
+          title: "Battalions",
+          description: "Field operations · South Africa · 8 sprints",
+          tag: "Automation & Integrations",
+          href: "/the-company-films",
+        },
+        {
+          avatarText: "Mm",
+          color: "navy",
+          title: "Marmalade Marketing",
+          description: "Marketing agency · UK · 1 engagement",
+          tag: "Workspace Architecture",
+          href: "/the-ola-agency",
+        },
+      ],
     },
   ];
 
-  // ── Reusable column renderer ────────────────────────────────
-  const renderColumn = (column: any, index: number) => (
-    <div
-      className={`underMega d-flex ${column.subItems ? "has-sub-items" : ""} ${column.isFirstRow ? "underMega--full" : ""}`}
-      key={index}
-    >
-      <Link href={column.href} className="d-flex mega-col-header">
-        <div className="icon">
-          <Image
-            className="img-contain"
-            src={getImagePath(column.icon)}
-            width={500}
-            height={500}
-            loading="lazy"
-            alt="mega menu icon"
-            unoptimized
-          />
-        </div>
-        <div className="content">
-          <h3>{column.title}</h3>
-          {column.description && <p>{column.description}</p>}
-          {column.subItems && column.subItems.length > 0 && (
-            <ul className={`mega-sub-items list-none${column.singleColumn ? " single-col" : ""}`}>
-              {column.subItems.map((sub: any, subIndex: number) => (
-                <li key={subIndex}>
-                  <Link href={sub.href} className={`mega-sub-link${sub.labelClass ? ` ${sub.labelClass}` : ""}`}>
-                    {sub.label}
-                    {sub.badge && (
-                      <span className="sub-badge"> : {sub.badge}</span>
-                    )}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      </Link>
-    </div>
-  );
-
-  const renderMegaMenu = (megaMenu: any) => {
-    // Split: first-row columns vs rest
-    const firstRowColumns = megaMenu.columns.filter((c: any) => c.isFirstRow);
-    const restColumns = megaMenu.columns.filter((c: any) => !c.isFirstRow);
-
-    return (
-      <div className="mega-menu">
-        <div className="mega-column megaFlexMenu d-flex">
-          {/* Full-width first row items */}
-          {firstRowColumns.length > 0 && (
-            <div className="mega-first-row">
-              {firstRowColumns.map((column: any, index: number) =>
-                renderColumn(column, index)
-              )}
-            </div>
-          )}
-
-          {/* Regular grid items */}
-          {restColumns.map((column: any, index: number) =>
-            renderColumn(column, index + firstRowColumns.length)
-          )}
-        </div>
-
-        <div className="mega-column outcomes">
-          <div>
-            <h3>Your Outcomes</h3>
-            <ul>
-              {megaMenu.outcomes.map((outcome: string, index: number) => (
-                <li key={index}>
-                  <span>
-                    <svg
-                      aria-hidden="true"
-                      className="e-font-icon-svg e-fas-check"
-                      viewBox="0 0 512 512"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                        fill="#7ddb0080"
-                      ></path>
-                    </svg>
-                  </span>
-                  {outcome}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="mega-menu-btm-img">
-              <img
-                className="img-contain"
-                src="https://www.upficient.com/clickup-templates/wp-content/uploads/2025/06/Asset-102-27-1024x284.png"
-                alt="Globe"
-              />
-          </div>
-        </div>
+  // ── Renderers ────────────────────────────────────────────────
+  const renderGridMenu = (item: any) => (
+    <div className="mega-menu mega-menu--grid">
+      <p className="mega-eyebrow">{item.sectionLabel}</p>
+      <div className="mega-grid">
+        {item.cards.map((card: any, index: number) => (
+          <Link href={card.href} className={`mega-card`} key={index}>
+            {card.badge && <span className="mega-badge">{card.badge}</span>}
+            <span className={`mega-card-icon icon-${card.color}`}>
+              <FontAwesomeIcon icon={card.icon} />
+            </span>
+            <span className="mega-card-body">
+              <span className="mega-card-title">{card.title}</span>
+              <span className="mega-card-desc">{card.description}</span>
+            </span>
+          </Link>
+        ))}
       </div>
-    );
-  };
-
-  // ── Shared account dropdown markup ──────────────────────────
-  const AccountDropdown = ({ refProp }: { refProp: React.RefObject<HTMLDivElement> }) => (
-    <div
-      className={`account account-dropdown-wrapper ${accountOpen ? "open" : ""}`}
-      ref={refProp}
-    >
-      <button
-        className="account-btn"
-        onClick={() => setAccountOpen((prev) => !prev)}
-        aria-expanded={accountOpen}
-        aria-haspopup="true"
-      >
-        <span className="account-icon">
-          <FontAwesomeIcon icon={faUser} />
-        </span>
-        Account
-        <ChevronDownIcon2 className={accountOpen ? "rotated" : ""} />
-      </button>
-
-      {accountOpen && (
-        <ul className="account-dropdown list-none">
-          <li>
-            <Link
-              href="https://www.upficient.com/clickup-templates/login/"
-              onClick={() => setAccountOpen(false)}
-            >
-              Login
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="https://www.upficient.com/clickup-templates/register/"
-              onClick={() => setAccountOpen(false)}
-            >
-              Sign Up
-            </Link>
-          </li>
-        </ul>
-      )}
     </div>
   );
+
+  const renderSidebarMenu = (item: any) => (
+    <div className="mega-menu mega-menu--sidebar">
+      <div className="mega-sidebar">
+        <p className="mega-eyebrow">{item.sidebarTitle}</p>
+
+        {item.sidebarGroups &&
+          item.sidebarGroups.map((group: any, gIndex: number) => (
+            <div className="mega-sidebar-group" key={gIndex}>
+              <p className="mega-sidebar-group-title">{group.title}</p>
+              <ul className="list-none">
+                {group.items.map((link: any, lIndex: number) => (
+                
+                  <li key={lIndex}>
+                    <Link href={link.href} className="mega-sidebar-link">
+                      <FontAwesomeIcon icon={link.icon} />
+                      {link.label}
+                    </Link>
+                  </li>
+                 
+                ))}
+              </ul>
+              <div className="sidebar-menu-group__divider"></div>
+            </div>
+          ))}
+
+        {item.sidebarSimpleItems && (
+          <ul className="list-none mega-sidebar-simple">
+            {item.sidebarSimpleItems.map((link: any, lIndex: number) => (
+              <li key={lIndex}>
+                <Link href={link.href} className="mega-sidebar-link">
+                  <FontAwesomeIcon icon={link.icon} />
+                  {link.label}
+                  {typeof link.count === "number" && (
+                    <span className="mega-sidebar-count">{link.count}</span>
+                  )}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {item.sidebarFooterLink && (
+          <Link href={item.sidebarFooterLink.href} className="mega-sidebar-footer">
+            <FontAwesomeIcon icon={faGrip} />
+            {item.sidebarFooterLink.label}
+          </Link>
+        )}
+      </div>
+
+      <div className="mega-list">
+        <p className="mega-eyebrow">{item.listTitle}</p>
+        <ul className="list-none">
+          {item.listItems.map((row: any, rIndex: number) => (
+            <li key={rIndex}>
+              <Link href={row.href} className="mega-list-row">
+                {item.listType === "caseStudy" ? (
+                  <span className={`mega-avatar icon-${row.color}`}>{row.avatarText}</span>
+                ) : (
+                  <span className={`mega-list-icon icon-${row.color}`}>
+                    <FontAwesomeIcon icon={row.icon} />
+                  </span>
+                )}
+                <span className="mega-list-body">
+                  <span className="mega-list-title">{row.title}</span>
+                  <span className="mega-list-desc">{row.description}</span>
+                  <span
+                    className={`mega-tag ${
+                      item.listType === "caseStudy" ? "mega-tag--green" : "mega-tag--purple"
+                    }`}
+                  >
+                    {row.tag}
+                  </span>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+
+  const renderMegaMenu = (item: any) =>
+    item.type === "grid" ? renderGridMenu(item) : renderSidebarMenu(item);
 
   return (
     <>
-      {/* Mobile-only top bar (Book a Call + Account) */}
-      <div className="mobile-headerBtn headerBtn">
-        <div className="book-a-call">
-          <Link target="_blank" href="https://calendly.com/upficient_christopher-day/intro">
-            Book a Call
-          </Link>
-        </div>
-        <AccountDropdown refProp={accountRef2} />
-      </div>
 
       <header id="header">
         <div className="header-wrapper">
-          {/* Logo */}
-          <div className="header-col1">
-            <div className="headerLogo">
-              <Link href={"/"}>
-                <Image
-                  src={getImagePath("logomain.webp")}
-                  width={154}
-                  height={41}
-                  alt="Logo"
-                  className="img-contain"
-                  loading="lazy"
-                  unoptimized
-                />
-              </Link>
-            </div>
-          </div>
+          <Link className="headerLogo" href={"/"}>
+            <Image
+              src={getImagePath("mainlogo.png")}
+              width={154}
+              height={41}
+              alt="Logo"
+              className="img-contain"
+              loading="lazy"
+              unoptimized
+            />
+          </Link>
 
-          {/* Nav */}
-          <div className="header-col2">
-            <button className="hamburger-menu" aria-label="Open menu">
-              <FontAwesomeIcon icon={faBars} />
-            </button>
-            <div className="headerMenu align-items-center">
-              <button className="close-menu" aria-label="Close menu">
-                X
-              </button>
-              <nav>
-                <ul className="menu list-none d-flex">
-                  {menuItems.map((item, index) => (
-                    <li
-                      className={`dropdown ${item.hasMegaMenu ? "has-mega-menu" : ""}`}
-                      key={index}
-                    >
-                      <Link href={item.href} className="menu-link">
-                        {item.name}
-                        {item.hasMegaMenu && <ChevronDownIcon />}
-                      </Link>
-                      {item.hasMegaMenu && renderMegaMenu(item.megaMenu)}
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            </div>
-          </div>
+          <button className="hamburger-menu" aria-label="Open menu">
+            <FontAwesomeIcon icon={faBars} />
+          </button>
+          <button className="close-menu" aria-label="Close menu">
+            X
+          </button>
+          <nav className="nav-list headerMenu">
+            <ul className="menu list-none d-flex">
+              {menuItems.map((item, index) => (
+                <li className="dropdown has-mega-menu" key={index}>
+                  <Link href={item.href} className="menu-link">
+                    {item.name}
+                    <span aria-hidden="true" className="chev"></span>
+                  </Link>
+                  {renderMegaMenu(item)}
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-          {/* Desktop CTA buttons */}
-          <div className="header-col3 headerBtn">
-            <div className="book-a-call">
-              <Link target="_blank" href="https://calendly.com/upficient_christopher-day/intro">
-              Book a Call
-              </Link>
-            </div>
-            <AccountDropdown refProp={accountRef} />
-          </div>
+          <Link className="book-a-call" target="_blank" href="https://calendly.com/upficient_christopher-day/intro">
+            Book a free call
+          </Link>
         </div>
       </header>
     </>
