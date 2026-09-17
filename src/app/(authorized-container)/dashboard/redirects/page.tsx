@@ -128,9 +128,9 @@ export default function Redirects() {
     <div className="main-user-wrapper">
       <form noValidate onSubmit={handleSubmit(onSubmitForm)}>
         <div className="container">
-          <div className="row">
+          <div className="row mx-0">
             <div className="col-lg-8">
-              <div className="row">
+              <div className="row mx-0">
                 <div className="col-lg-6 form-col">
                   <InputText
                     register={register}

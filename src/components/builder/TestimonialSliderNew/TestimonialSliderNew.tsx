@@ -44,7 +44,7 @@ const TestimonialSliderNew = () => {
       }}
     >
       <div className="container">
-        <div className="row">
+        <div className="row mx-0">
           <div className="col-lg-9 mx-auto">
             <div className="testimonialhead">
               <h2>FEATURED REVIEWS</h2>

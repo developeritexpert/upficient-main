@@ -76,7 +76,7 @@ const Footer = async () => {
     <>
       <footer className="footer">
         <div className="container-fluid">
-          <div className="row">
+          <div className="row mx-0">
             <div className="column column-40">
               <div className="logo">
                 <Image

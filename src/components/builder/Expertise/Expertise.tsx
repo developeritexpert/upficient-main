@@ -66,7 +66,7 @@ const Expertise: React.FC<{ data: any }> = ({ data }) => {
           }}
         >
           <div className="container">
-            <div className="row">
+            <div className="row mx-0">
               <div className="col-lg-12">
                 <div className="heading text-center">
                   <h2
@@ -115,7 +115,7 @@ const Expertise: React.FC<{ data: any }> = ({ data }) => {
             }}
           >
             <div className="container">
-              <div className="row align-items-center">
+              <div className="row mx-0 align-items-center">
                 {/* Content Section */}
                 <div className="col-lg-6 col-md-6 content">
                   <div className="expertiseContent">
@@ -188,7 +188,7 @@ const Expertise: React.FC<{ data: any }> = ({ data }) => {
       ) : (
         <section className="innerExpertise">
           <div className="container">
-            <div className="row">
+            <div className="row mx-0">
               <div className="col-lg-12 text-center">
                 <p>No expertise data available.</p>
               </div>

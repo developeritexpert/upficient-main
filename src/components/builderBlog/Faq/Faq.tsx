@@ -28,7 +28,7 @@ const FAQCollapse: React.FC<{ data: any }> = ({ data }) => {
         }}
       >
         <div className="container">
-          <div className="row">
+          <div className="row mx-0">
             <div className="col-lg-12">
               <h2>{title}</h2> {/* Title dynamically pulled */}
               <div className="accordion">

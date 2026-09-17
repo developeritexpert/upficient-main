@@ -74,7 +74,7 @@ function CaseStudiesMain() {
   return (
     <section className="caseStudiesSection">
       <div className="container">
-        <div className="row">
+        <div className="row mx-0">
           {/* Left Sidebar — Categories */}
           <div className="col-lg-3 col-md-3">
             <div className="cs-sidebar">

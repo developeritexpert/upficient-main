@@ -52,8 +52,8 @@ const ClickUpSection: React.FC<{ data: any }> = ({ data }) => {
         }}
       >
         <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-5 col-md-5">
+          <div className="row mx-0 align-items-center">
+            <div className="col-lg-5 col-md-12">
               <div className="content">
                 <div className="heading">
                   <h2
@@ -97,7 +97,7 @@ const ClickUpSection: React.FC<{ data: any }> = ({ data }) => {
                 )}
               </div>
             </div>
-            <div className="col-lg-7 col-md-7">
+            <div className="col-lg-7 col-md-12">
               <div className="servBoxes">
                 {boxes.length > 0 ? (
                   boxes.map((box: Box, index: number) => (
@@ -122,7 +122,7 @@ const ClickUpSection: React.FC<{ data: any }> = ({ data }) => {
 
       <section className="rating">
         <div className="container">
-          <div className="row justify-content-center">
+          <div className="row mx-0 justify-content-center">
             <div className="col-lg-8">
               <div className="ratingImg">
                 <Link href={getImagePath("newservice.webp")}>

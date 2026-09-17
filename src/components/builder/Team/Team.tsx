@@ -24,7 +24,7 @@ const Team: React.FC<TeamProps> = ({ data }) => {
   return (
     <section className="teamSec">
       <div className="container">
-        <div className="row">
+        <div className="row mx-0">
           <div className="col-lg-12">
             <div className="heading">
               <h2>{mainHeading.trim() || "Talented Team"}</h2>

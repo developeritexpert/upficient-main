@@ -41,7 +41,7 @@ const Testimonial: React.FC<TestimonialsProps> = ({ data }) => {
   return (
     <section className="testimonial">
       <div className="container">
-        <div className="row justify-content-center">
+        <div className="row mx-0 justify-content-center">
           <div className="col-lg-8">
             <div className="testimonial-slider">
               <h4>{mainHeading}</h4>

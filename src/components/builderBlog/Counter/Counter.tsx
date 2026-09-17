@@ -33,7 +33,7 @@ function Counter() {
     <>
       <section className="count">
         <div className="container">
-          <div className="row">
+          <div className="row mx-0">
             <div className="col-lg-12">
               <div className="countSec d-flex">
                 <div className="countContent text-center">

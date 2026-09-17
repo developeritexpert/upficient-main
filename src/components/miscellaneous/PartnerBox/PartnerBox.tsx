@@ -39,33 +39,34 @@ const PartnerBox: React.FC<PartnerBoxProps> = ({
         className="mainEfficiency text-center"
         style={{ background: boxbackgroundColor, boxShadow: boxShadow }}
       >
-        {/* Icon/Image Section */}
-        <div className="icon">
-          <Image
-            src={getImagePath("effi1.webp", imageSrc)}
-            alt={imageAlt}
-            width={600} // Adjust the dimensions as needed
-            height={400}
-            className="img-contain"
-            loading="lazy"
-            unoptimized
-          />
+        <div>
+          {/* Icon/Image Section */}
+          <div className="icon">
+            <Image
+              src={getImagePath("effi1.webp", imageSrc)}
+              alt={imageAlt}
+              width={600} // Adjust the dimensions as needed
+              height={400}
+              className="img-contain"
+              loading="lazy"
+              unoptimized
+            />
+          </div>
+
+          {/* Title Section */}
+          <div className="title">
+            <h4 style={{ color: headingColor }}>{title}</h4>
+          </div>
+
+          {/* Description Section */}
+          <div
+            className="para"
+            dangerouslySetInnerHTML={{
+              __html: description?.trim() ? description : "",
+            }}
+            style={{ color: textColor }}
+          ></div>
         </div>
-
-        {/* Title Section */}
-        <div className="title">
-          <h4 style={{ color: headingColor }}>{title}</h4>
-        </div>
-
-        {/* Description Section */}
-        <div
-          className="para"
-          dangerouslySetInnerHTML={{
-            __html: description?.trim() ? description : "",
-          }}
-          style={{ color: textColor }}
-        ></div>
-
         {/* Link Section */}
         <div className="readMore">
           <Link

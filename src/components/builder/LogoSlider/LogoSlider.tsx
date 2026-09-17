@@ -35,7 +35,7 @@ const LogoSlider: React.FC<LogoSliderProps> = ({ data }) => {
   return (
     <section className="logo-slider">
       <div className="container">
-        <div className="row justify-content-center">
+        <div className="row mx-0 justify-content-center">
           <div className="col-lg-12">
             <div className="logo-slider-inner">
               <h2>

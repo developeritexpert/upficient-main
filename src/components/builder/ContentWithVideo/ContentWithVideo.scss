@@ -114,6 +114,21 @@
       }
     }
   }
+  .content-with-video {
+    padding: 60px 0 150px;
+  }
+  .content-with-video .categoryboxes {
+    margin-top: 50px;
+
+    .categoryboxes-main {
+      gap: 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .content-with-video .categoryboxes .categoryboxes-main .categorybox h3 {
+    padding: 0;
+  }
 }
 @media (max-width: 567px) {
   .content-with-video {

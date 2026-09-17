@@ -97,7 +97,7 @@ const JourneySection: React.FC<{ data: any }> = ({ data }) => {
       >
         <div className="container">
           <div
-            className="row align-items-center"
+            className="row mx-0 align-items-center"
             style={{ marginBottom: "60px" }}
           >
             <div className="col-lg-12">
@@ -113,7 +113,7 @@ const JourneySection: React.FC<{ data: any }> = ({ data }) => {
             </div>
           </div>
 
-          <div className="row">
+          <div className="row mx-0">
             <div className="col-lg-12">
               <div className="mainJourney d-flex align-items-center">
                 {phases

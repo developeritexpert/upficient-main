@@ -4,7 +4,7 @@ export default function TableSection() {
     <>
       <section className="BlogTable">
         <div className="container">
-          <div className="row">
+          <div className="row mx-0">
             <div className="col-lg-12">
               <div className="table-container">
                 <table>

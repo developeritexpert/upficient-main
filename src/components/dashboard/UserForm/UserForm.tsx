@@ -171,7 +171,7 @@ const UserForm = ({ userId }: UserFormProps) => {
   return (
     <form noValidate onSubmit={handleSubmit(onSubmitForm)}>
       <div className="container">
-        <div className="row">
+        <div className="row mx-0">
           <div className="col-lg-4">
             <label
               style={{
@@ -248,7 +248,7 @@ const UserForm = ({ userId }: UserFormProps) => {
             </div>
           </div>
           <div className="col-lg-8">
-            <div className="row">
+            <div className="row mx-0">
               <div className="col-lg-6 form-col">
                 <InputText
                   register={register}
@@ -270,7 +270,7 @@ const UserForm = ({ userId }: UserFormProps) => {
                 />
               </div>
             </div>
-            <div className="row">
+            <div className="row mx-0">
               <div className="col-lg-6 form-col">
                 <InputText
                   register={register}
@@ -295,7 +295,7 @@ const UserForm = ({ userId }: UserFormProps) => {
                 </div>
               )}
             </div>
-            <div className="row">
+            <div className="row mx-0">
               <div className="col-lg-6 form-col">
                 <InputText
                   register={register}

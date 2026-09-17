@@ -6,7 +6,7 @@ function OtherGuides({ data }: any) {
     <>
       <div className="otherGuides">
         <div className="container">
-          <div className="row">
+          <div className="row mx-0">
             <div className="col-lg-12">
               <h2>Other Guides</h2>
             </div>

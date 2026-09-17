@@ -33,7 +33,7 @@ const IconBox: React.FC<{ data: any }> = ({ data }) => {
         {...(styles.sectionId ? { id: styles.sectionId } : {})}
       >
         <div className="container">
-          <div className="row">
+          <div className="row mx-0">
             <div className="col-lg-12">
               <div className="iconHeading text-center">
                 <h2

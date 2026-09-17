@@ -28,7 +28,7 @@ const CustomHtml: React.FC<{ data: any }> = ({ data }) => {
         }}
       >
         <div className="container">
-          <div className="row">
+          <div className="row mx-0">
             <div
               className="col-lg-12"
               dangerouslySetInnerHTML={{

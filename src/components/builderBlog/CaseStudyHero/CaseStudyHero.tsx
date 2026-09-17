@@ -64,7 +64,7 @@ const CaseStudyHero: React.FC<{ data: any }> = ({ data }) => {
           </Link>
         </div>
 
-        <div className="row align-items-center">
+        <div className="row mx-0 align-items-center">
           {/* Left: Image */}
           <div className="col-lg-6 col-md-6">
             <div className="cs-hero__image-wrap">

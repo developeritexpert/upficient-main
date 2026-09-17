@@ -61,7 +61,7 @@ function Faq() {
     <>
       <section className="faq">
         <div className="container">
-          <div className="row">
+          <div className="row mx-0">
             <div className="col-lg-3">
               <div className="sidebar">
                 <div className="sidebarTitle">

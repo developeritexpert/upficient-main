@@ -9,7 +9,7 @@ export default async function NotFound() {
     <>
       {/* test */}
       <div className="container">
-        <div className="row">
+        <div className="row mx-0">
           <Link href={getImagePath("Page-not-found.webp")}>
             <Image
               src={getImagePath("Page-not-found.webp")}

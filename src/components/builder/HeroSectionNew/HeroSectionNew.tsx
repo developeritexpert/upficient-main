@@ -23,18 +23,18 @@ const HeroSectionNew: React.FC<{ data: any }> = ({ data }) => {
         backgroundColor: styles.backgroundColor || "transparent",
       }}
     >
-      {data?.BadgeImage && (
-        <Image
-          src={getImagePath("", data.BadgeImage)}
-          alt="Badge"
-          className="BadgeImage"
-          width={500}
-          height={500}
-          unoptimized
-        />
-      )}
-      <div className="container-fluid position-relative" style={{ zIndex: 2 }}>
-        <div className="row align-items-center">
+      <div className="container position-relative" style={{ zIndex: 2 }}>
+        {data?.BadgeImage && (
+          <Image
+            src={getImagePath("", data.BadgeImage)}
+            alt="Badge"
+            className="BadgeImage"
+            width={500}
+            height={500}
+            unoptimized
+          />
+        )}
+        <div className="row mx-0 align-items-center">
           <div className="col-lg-6 col-md-6">
             <div className="heroContent">
               <div className="heading">

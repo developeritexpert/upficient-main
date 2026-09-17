@@ -93,7 +93,10 @@ const Header = () => {
 
     return () => {
       dropdowns.forEach((dropdown) => {
-        dropdown.removeEventListener("click", handleDropdownClick as EventListener);
+        dropdown.removeEventListener(
+          "click",
+          handleDropdownClick as EventListener,
+        );
       });
     };
   }, []);
@@ -111,7 +114,7 @@ const Header = () => {
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       const clickedInsideAnyDropdown = !!(e.target as HTMLElement)?.closest(
-        ".account-dropdown-wrapper"
+        ".account-dropdown-wrapper",
       );
       if (!clickedInsideAnyDropdown) {
         setAccountOpen(false);
@@ -133,7 +136,8 @@ const Header = () => {
           icon: faLandmark,
           color: "purple",
           title: "Workspace Architecture",
-          description: "New workspace or full restructure —hierarchy, fields, dashboards, training.",
+          description:
+            "New workspace or full restructure —hierarchy, fields, dashboards, training.",
           href: "/clickup-workspace-optimization/",
           badge: "Most Requested",
         },
@@ -148,14 +152,16 @@ const Header = () => {
           icon: faBolt,
           color: "pink",
           title: "Automation & Integrations",
-          description: "Make.com, Zapier, native ClickUp — eliminate manual work.",
+          description:
+            "Make.com, Zapier, native ClickUp — eliminate manual work.",
           href: "/clickup-integrations/",
         },
         {
           icon: faMessage,
           color: "amber",
           title: "ClickUp Consulting",
-          description: "Audits, strategy, AI setup, training — on your schedule.",
+          description:
+            "Audits, strategy, AI setup, training — on your schedule.",
           href: "/clickup-consultants/",
         },
       ],
@@ -169,31 +175,78 @@ const Header = () => {
         {
           title: "Organisation",
           items: [
-            { icon: faBuilding, label: "Agencies", href: "/clickup-templates/product-category/organizations/creative-agencies/" },
-            { icon: faUserTie, label: "Professional services", href: "/clickup-templates/product-category/organizations/professional-services/" },
-            { icon: faRocket, label: "Startups tech", href: "/clickup-templates/product-category/organizations/startups-tech-teams/" },
-            { icon: faHeartPulse, label: "Healthcare", href: "/clickup-templates/product-category/organizations/healthcare-services/" },
+            {
+              icon: faBuilding,
+              label: "Agencies",
+              href: "/clickup-templates/product-category/organizations/creative-agencies/",
+            },
+            {
+              icon: faUserTie,
+              label: "Professional services",
+              href: "/clickup-templates/product-category/organizations/professional-services/",
+            },
+            {
+              icon: faRocket,
+              label: "Startups tech",
+              href: "/clickup-templates/product-category/organizations/startups-tech-teams/",
+            },
+            {
+              icon: faHeartPulse,
+              label: "Healthcare",
+              href: "/clickup-templates/product-category/organizations/healthcare-services/",
+            },
           ],
         },
         {
           title: "Function",
           items: [
-            { icon: faUsers, label: "Client delivery", href: "/clickup-templates/product-category/categories/client-fulfilment/" },
-            { icon: faBolt, label: "Operations", href: "/clickup-templates/product-category/categories/operations/" },
-            { icon: faBullhorn, label: "Marketing", href: "/clickup-templates/product-category/categories/marketing/" },
-            { icon: faHeadset, label: "Support tickets", href: "/clickup-templates/product-category/function/support/" },
+            {
+              icon: faUsers,
+              label: "Client delivery",
+              href: "/clickup-templates/product-category/categories/client-fulfilment/",
+            },
+            {
+              icon: faBolt,
+              label: "Operations",
+              href: "/clickup-templates/product-category/categories/operations/",
+            },
+            {
+              icon: faBullhorn,
+              label: "Marketing",
+              href: "/clickup-templates/product-category/categories/marketing/",
+            },
+            {
+              icon: faHeadset,
+              label: "Support tickets",
+              href: "/clickup-templates/product-category/function/support/",
+            },
           ],
         },
         {
           title: "Operating systems",
           items: [
-            { icon: faFlag, label: "EOS®", href: "/clickup-templates/product/scaling-up-rockefeller-method-2-0/" },
-            { icon: faBullseye, label: "OKRs", href: "/clickup-templates/product-category/operating-systems/objective-key-results-okr/" },
-            { icon: faLayerGroup, label: "+ much more", href: "/clickup-templates/product-category/operating-systems/" },
+            {
+              icon: faFlag,
+              label: "EOS®",
+              href: "/clickup-templates/product/scaling-up-rockefeller-method-2-0/",
+            },
+            {
+              icon: faBullseye,
+              label: "OKRs",
+              href: "/clickup-templates/product-category/operating-systems/objective-key-results-okr/",
+            },
+            {
+              icon: faLayerGroup,
+              label: "+ much more",
+              href: "/clickup-templates/product-category/operating-systems/",
+            },
           ],
         },
       ],
-      sidebarFooterLink: { label: " All templates →", href: "/clickup-templates/" },
+      sidebarFooterLink: {
+        label: " All templates →",
+        href: "/clickup-templates/",
+      },
       listTitle: "Featured Templates",
       listType: "template" as const,
       listItems: [
@@ -201,7 +254,8 @@ const Header = () => {
           icon: faGraduationCap,
           color: "purple",
           title: "ClickUp Onboarding Training",
-          description: "Train your team on ClickUp with a structured onboarding system and documented SOPs.",
+          description:
+            "Train your team on ClickUp with a structured onboarding system and documented SOPs.",
           tag: "Onboarding",
           href: "/clickup-onboarding-service/",
         },
@@ -209,7 +263,8 @@ const Header = () => {
           icon: faBullseye,
           color: "green",
           title: "OKR System",
-          description: "Quarterly objectives, key results, check-ins, and leadership dashboards.",
+          description:
+            "Quarterly objectives, key results, check-ins, and leadership dashboards.",
           tag: "Operating system",
           href: "/clickup-workspace-optimization/",
         },
@@ -217,7 +272,8 @@ const Header = () => {
           icon: faBullhorn,
           color: "pink",
           title: "Digital Marketing Agency — Client Delivery",
-          description: "Folder-per-client structure with scoped views and automation layer.",
+          description:
+            "Folder-per-client structure with scoped views and automation layer.",
           tag: "Agency",
           href: "/clickup-templates/product-category/categories/marketing/",
         },
@@ -225,7 +281,8 @@ const Header = () => {
           icon: faTicket,
           color: "pinkpurple",
           title: "Support Tickets Hub",
-          description: "Centralise, triage, and resolve internal and external tickets.",
+          description:
+            "Centralise, triage, and resolve internal and external tickets.",
           tag: "Function",
           href: "/clickup-templates/product-category/function/",
         },
@@ -237,13 +294,55 @@ const Header = () => {
       type: "sidebar" as const,
       sidebarTitle: "Browse by type",
       sidebarSimpleItems: [
-        { icon: faBook, label: "All guides", count: 7, href: "/clickup-guides" },
-        { icon: faListOl, label: "Tutorials", count: 7, href: "/clickup-in-2025-the-ultimate-guide#guidesection-1" },
-        { icon: faLandmark, label: "Architecture", count: 1, href: "/clickup-in-2025-the-ultimate-guide#guidesection" },
-        { icon: faTableCells, label: "Template guides", count: 1, href: "/clickup-guides/clickup-in-2025-the-ultimate-guide" },
-        { icon: faWandMagicSparkles, label: "Feature updates", count: 1, href: "/clickup-guides/clickup-in-2025-the-ultimate-guide" },
-        { icon: faLandmark, label: "OS guides", count: 1, href: "/clickup-guides/how-to-use-clickup-full-clickup-tutorial#guidesection-" },
-        { icon: faRobot, label: "ClickUp AI", count: 1, href: "/clickup-guides/clickup-in-2025-the-ultimate-guide" },
+        {
+          icon: faBook,
+          color: "pinkpurple",
+          label: "All guides",
+          count: 7,
+          href: "/clickup-guides",
+        },
+        {
+          icon: faListOl,
+          color: "grey",
+          label: "Tutorials",
+          count: 7,
+          href: "/clickup-in-2025-the-ultimate-guide#guidesection-1",
+        },
+        {
+          icon: faLandmark,
+          color: "purple",
+          label: "Architecture",
+          count: 1,
+          href: "/clickup-in-2025-the-ultimate-guide#guidesection",
+        },
+        {
+          icon: faTableCells,
+          color: "amber",
+          label: "Template guides",
+          count: 1,
+          href: "/clickup-guides/clickup-in-2025-the-ultimate-guide",
+        },
+        {
+          icon: faWandMagicSparkles,
+          color: "green",
+          label: "Feature updates",
+          count: 1,
+          href: "/clickup-guides/clickup-in-2025-the-ultimate-guide",
+        },
+        {
+          icon: faLandmark,
+          color: "purple",
+          label: "OS guides",
+          count: 1,
+          href: "/clickup-guides/how-to-use-clickup-full-clickup-tutorial#guidesection-",
+        },
+        {
+          icon: faRobot,
+          color: "pinkpurple",
+          label: "ClickUp AI",
+          count: 1,
+          href: "/clickup-guides/clickup-in-2025-the-ultimate-guide",
+        },
       ],
       sidebarFooterLink: { label: "All guides →", href: "/clickup-guides" },
       listTitle: "Featured Guides",
@@ -253,7 +352,8 @@ const Header = () => {
           icon: faSitemap,
           color: "pinkpurple",
           title: "The ClickUp Hierarchy Explained",
-          description: "Workspaces, Spaces, Folders, Lists, Tasks — what they mean and how to design them right.",
+          description:
+            "Workspaces, Spaces, Folders, Lists, Tasks — what they mean and how to design them right.",
           tag: "Tutorial · 12 min",
           href: "/clickup-guides/how-to-use-clickup-full-clickup-tutorial#guidesection-3",
         },
@@ -261,7 +361,8 @@ const Header = () => {
           icon: faBrain,
           color: "purple",
           title: "ClickUp Brain: A Practical Setup Guide",
-          description: "What Brain actually does, what your workspace needs before it works, how to prompt effectively.",
+          description:
+            "What Brain actually does, what your workspace needs before it works, how to prompt effectively.",
           tag: "ClickUp AI · 15 min",
           href: "/clickup-guides/clickup-in-2025-the-ultimate-guide#guidesection-7",
         },
@@ -269,7 +370,8 @@ const Header = () => {
           icon: faTableCellsLarge,
           color: "slate",
           title: "How to Design ClickUp Dashboards That Actually Get Used",
-          description: "Dashboard-first design principle, widget selection, and data prerequisites.",
+          description:
+            "Dashboard-first design principle, widget selection, and data prerequisites.",
           tag: "Architecture · 13 min",
           href: "/clickup-guides/how-to-transform-your-web-development-agencys-client-management-with-clickUp",
         },
@@ -277,7 +379,8 @@ const Header = () => {
           icon: faLandmark,
           color: "amber",
           title: "How to Implement EOS® in ClickUp",
-          description: "All six EOS® components built in ClickUp — a complete architecture guide.",
+          description:
+            "All six EOS® components built in ClickUp — a complete architecture guide.",
           tag: "OS guide · 18 min",
           href: "/clickup-guides/mastering-agile-how-to-build-your-own-scrum-board-in-clickUp",
         },
@@ -297,15 +400,26 @@ const Header = () => {
       type: "sidebar" as const,
       sidebarTitle: "Company",
       sidebarSimpleItems: [
-        { icon: faUsers, label: "About Upficient", href: "/about-upficient-experts" },
-        { icon: faChartSimple, label: "Case studies", href: "/case-study" },
-        { icon: faCircleQuestion, label: "FAQs", href: "/faq" },
+        {
+          icon: faUsers,
+          color: "pinkpurple",
+          label: "About Upficient",
+          href: "/about-upficient-experts",
+        },
+        {
+          icon: faChartSimple,
+          color: "pink",
+          label: "Case studies",
+          href: "/case-study",
+        },
+        { icon: faCircleQuestion, color: "amber", label: "FAQs", href: "/faq" },
       ],
       listTitle: "Featured Case Studies",
       listType: "caseStudy" as const,
       listItems: [
         {
           avatarText: "Le",
+          image: "lento.webp",
           color: "green",
           title: "Lento Agency",
           description: "Creative agency · Argentina · 5 engagements",
@@ -314,6 +428,7 @@ const Header = () => {
         },
         {
           avatarText: "ML",
+          image: "momsforliberty.webp",
           color: "slate",
           title: "Moms for Liberty",
           description: "Political org · United States · 6 engagements",
@@ -322,7 +437,7 @@ const Header = () => {
         },
         {
           avatarText: "Ba",
-          color: "purple",
+          color: "slate",
           title: "Battalions",
           description: "Field operations · South Africa · 8 sprints",
           tag: "Automation & Integrations",
@@ -330,7 +445,7 @@ const Header = () => {
         },
         {
           avatarText: "Mm",
-          color: "navy",
+          color: "slate",
           title: "Marmalade Marketing",
           description: "Marketing agency · UK · 1 engagement",
           tag: "Workspace Architecture",
@@ -389,7 +504,9 @@ const Header = () => {
             {item.sidebarSimpleItems.map((link: any, lIndex: number) => (
               <li key={lIndex}>
                 <Link href={link.href} className="mega-sidebar-link">
-                  <FontAwesomeIcon icon={link.icon} />
+                  <span className={`icon-${link.color}`}>
+                    <FontAwesomeIcon icon={link.icon} />
+                  </span>
                   {link.label}
                   {typeof link.count === "number" && (
                     <span className="mega-sidebar-count">{link.count}</span>
@@ -401,7 +518,10 @@ const Header = () => {
         )}
 
         {item.sidebarFooterLink && (
-          <Link href={item.sidebarFooterLink.href} className="mega-sidebar-footer">
+          <Link
+            href={item.sidebarFooterLink.href}
+            className="mega-sidebar-footer"
+          >
             <FontAwesomeIcon icon={faGrip} />
             {item.sidebarFooterLink.label}
           </Link>
@@ -410,12 +530,28 @@ const Header = () => {
 
       <div className="mega-list">
         <p className="mega-eyebrow">{item.listTitle}</p>
-        <ul className="list-none">
+        <ul className="list-none mega-ul">
           {item.listItems.map((row: any, rIndex: number) => (
             <li key={rIndex}>
               <Link href={row.href} className="mega-list-row">
                 {item.listType === "caseStudy" ? (
-                  <span className={`mega-avatar icon-${row.color}`}>{row.avatarText}</span>
+                  row.image ? (
+                    <span
+                      className={`mega-avatar mega-avatar--image icon-${row.color}`}
+                    >
+                      <Image
+                        src={getImagePath(row.image)}
+                        alt={row.title}
+                        width={32}
+                        height={32}
+                        className="mega-avatar-img"
+                      />
+                    </span>
+                  ) : (
+                    <span className={`mega-avatar icon-${row.color}`}>
+                      {row.avatarText}
+                    </span>
+                  )
                 ) : (
                   <span className={`mega-list-icon icon-${row.color}`}>
                     <FontAwesomeIcon icon={row.icon} />
@@ -426,7 +562,9 @@ const Header = () => {
                   <span className="mega-list-desc">{row.description}</span>
                   <span
                     className={`mega-tag ${
-                      item.listType === "caseStudy" ? "mega-tag--green" : "mega-tag--purple"
+                      item.listType === "caseStudy"
+                        ? "mega-tag--green"
+                        : "mega-tag--purple"
                     }`}
                   >
                     {row.tag}
@@ -446,7 +584,7 @@ const Header = () => {
   return (
     <>
       <header id="header">
-        <div className="header-wrapper">
+        <nav className="header-wrapper">
           <Link className="headerLogo" href={"/"}>
             <Image
               src={getImagePath("mainlogo.png")}
@@ -467,31 +605,36 @@ const Header = () => {
             <FontAwesomeIcon icon={mobileMenuOpen ? faXmark : faBars} />
           </button>
 
-          <nav
-            className={`nav-list headerMenu${mobileMenuOpen ? " active" : ""}`}
+          <ul
+            className={`menu list-none d-flex nav-list headerMenu${mobileMenuOpen ? " active" : ""}`}
             onClick={handleNavClick}
           >
-            <ul className="menu list-none d-flex">
-              {menuItems.map((item, index) => (
-                <li className="dropdown has-mega-menu" key={index}>
-                  <Link href={item.href} className="menu-link">
-                    {item.name}
-                    <span aria-hidden="true" className="chev"></span>
-                  </Link>
-                  {renderMegaMenu(item)}
-                </li>
-              ))}
-            </ul>
+            {menuItems.map((item, index) => (
+              <li className="dropdown has-mega-menu" key={index}>
+                <Link href={item.href} className="menu-link">
+                  {item.name}
+                  <span aria-hidden="true" className="chev"></span>
+                </Link>
+                {renderMegaMenu(item)}
+              </li>
+            ))}
 
             <Link
-              className="book-a-call"
+              className="book-a-call mobile-only"
               target="_blank"
               href="https://calendly.com/upficient_christopher-day/intro"
             >
               Book a free call
             </Link>
-          </nav>
-        </div>
+          </ul>
+          <Link
+            className="book-a-call desktop-only"
+            target="_blank"
+            href="https://calendly.com/upficient_christopher-day/intro"
+          >
+            Book a free call
+          </Link>
+        </nav>
       </header>
 
       {mobileMenuOpen && (

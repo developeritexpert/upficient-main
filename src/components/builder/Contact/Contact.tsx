@@ -17,7 +17,7 @@ const Contact: React.FC<{ data: any }> = ({ data }) => {
         }}
       >
         <div className="container">
-          <div className="row">
+          <div className="row mx-0">
             <div className="col-lg-12">
               <div className="contactImg">
                 <Link href={getImagePath("hero_front.webp", data?.image)}>
@@ -38,7 +38,7 @@ const Contact: React.FC<{ data: any }> = ({ data }) => {
       </section>
       <section className="contactForm">
         <div className="container">
-          <div className="row">
+          <div className="row mx-0">
             <div className="col-lg-12">
               <div className="contactUsForm">
                 <div className="title">

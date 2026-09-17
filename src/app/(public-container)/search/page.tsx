@@ -62,7 +62,7 @@ function Page() {
     <>
       <section className="allBlogs searchpage">
         <div className="container">
-          <div className="row">
+          <div className="row mx-0">
             <div className="col-lg-8 col-md-8">
               <div className="mainBlogBoxes d-flex flexwrap">
                 {searchResults.map((result) => {

@@ -2,6 +2,11 @@
   padding-top: 50px;
   .mainEfficiency {
     padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
     .icon {
       height: 100px;
     }

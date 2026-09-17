@@ -54,7 +54,7 @@ const Partner: React.FC<{ data: any }> = ({ data }) => {
           }}
         >
           <div className="container">
-            <div className="row">
+            <div className="row mx-0">
               <div className="col-lg-12">
                 <div className="heading text-center">
                   <h2
@@ -87,7 +87,7 @@ const Partner: React.FC<{ data: any }> = ({ data }) => {
           }}
         >
           <div className="container">
-            <div className="row">
+            <div className="row mx-0">
               {partnerboxes.length > 0 ? (
                 partnerboxes.map((box: any, index: number) => (
                   <PartnerBox

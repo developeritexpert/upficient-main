@@ -34,7 +34,7 @@ const TextWithImage: React.FC<{ data: any }> = ({ data }) => {
       >
         <div className="container">
           <div
-            className="row"
+            className="row mx-0"
             style={{
               flexDirection:
                 styles.alignment == "right" ? "row-reverse" : undefined,

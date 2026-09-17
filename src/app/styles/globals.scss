@@ -15,9 +15,11 @@ body {
   font-family: "poppins";
   scroll-behavior: smooth;
 }
+
 main.front-wrapper {
-  margin-top: 81px;
+  // margin-top: 81px;
 }
+
 h1 {
   font-size: 48px;
   font-weight: 700;
@@ -91,7 +93,16 @@ p {
   border-radius: 50px;
   padding: 10px 20px;
   font-weight: 600;
-  display: inline;
+  display: inline-block;
+}
+
+.cstm-container {
+  max-width: 1250px;
+  margin-inline: auto;
+}
+
+.position-relative {
+  position: relative;
 }
 
 .bg-purple {
@@ -164,6 +175,7 @@ p {
         color: var(--white) !important;
       }
     }
+
     .para {
       p {
         color: var(--white) !important;
@@ -171,6 +183,7 @@ p {
     }
   }
 }
+
 .servicesBoxmain:nth-child(3n) {
   .servicesBox {
     .title {
@@ -178,6 +191,7 @@ p {
         color: #9864ff !important;
       }
     }
+
     .para {
       p {
         color: #9864ff !important;
@@ -193,6 +207,7 @@ p {
         color: #402e63 !important;
       }
     }
+
     .para {
       p {
         color: #402e63 !important;
@@ -200,6 +215,7 @@ p {
     }
   }
 }
+
 .servicesBoxmain:nth-child(5) {
   .servicesBox {
     .title {
@@ -207,6 +223,7 @@ p {
         color: #402e63 !important;
       }
     }
+
     .para {
       p {
         color: #402e63 !important;
@@ -218,8 +235,9 @@ p {
 // home page css
 div#page-home {
   .HeroSectionNew .heroImg {
-    right: -15px;
+    right: 0;
   }
+
   section.partner-main-wrapper,
   section#main-service,
   #bottomsec {
@@ -227,13 +245,16 @@ div#page-home {
     z-index: 9;
   }
 }
+
 div#page-case-study {
   .heroSection {
     background: linear-gradient(4.45deg, #e6e2ff 3.47%, #ffffff 82.53%);
   }
+
   .heroSection img.BadgeImage {
     display: none;
   }
+
   section.colorbgSec {
     margin-top: -100px;
     position: relative;
@@ -241,44 +262,55 @@ div#page-case-study {
     border-radius: 100px 0 0 0;
   }
 }
+
 // service page css
 div#page-our-services {
   .heroSection {
     background: linear-gradient(4.45deg, #e6e2ff 3.47%, #ffffff 82.53%);
   }
+
   .heroSection .heroImg {
     position: relative;
     right: 50%;
   }
+
   section#main-service {
+
     section.mainHead.bg-purple,
     section.services {
       background: #a064ff !important;
     }
+
     section.mainHead.bg-purple {
       section.mainHead.bg-purple .heading.text-center h2 {
         color: #fff !important;
       }
     }
   }
+
   section#bottomsection {
     z-index: 9;
   }
+
   .content-with-video {
     background: transparent;
+
     .categoryboxes {
       display: none;
     }
   }
 }
+
 div#page-clickup-workspace-optimization {
   section.content-with-video {
     background: #fff !important;
     padding-bottom: 0;
+
     .categoryboxes {
       display: none;
     }
   }
+
   .expertiseContent .subHead p {
     background: transparent;
     padding: 0;
@@ -286,25 +318,31 @@ div#page-clickup-workspace-optimization {
     font-weight: 600;
     font-size: 20px !important;
   }
+
   .expertiseContent .title {
     padding-top: 5px !important;
   }
+
   section#phase4 {
     background: linear-gradient(359.91deg, #e6e2ff 0.09%, #ffffff 75.75%);
   }
+
   section#phase5 {
     margin-top: -100px;
     background: #fff;
     position: relative;
     border-radius: 100px 0 0 0;
   }
+
   section#servicebottomsec {
     z-index: 9;
+
     .row {
       align-items: center !important;
     }
   }
 }
+
 div#page-clickup-integrations {
   .expertiseContent .subHead p {
     background: transparent;
@@ -313,32 +351,40 @@ div#page-clickup-integrations {
     font-weight: 600;
     font-size: 20px !important;
   }
+
   .expertiseContent .title {
     padding-top: 5px !important;
   }
+
   section.content-with-video {
     background: #fff !important;
     padding-bottom: 0;
+
     .categoryboxes {
       display: none;
     }
   }
+
   section#phase3 {
     background: linear-gradient(359.91deg, #e6e2ff 0.09%, #ffffff 75.75%);
   }
+
   section#phase4 {
     position: relative;
     margin-top: -100px;
     background: #fff;
     border-radius: 100px 0 0 0;
   }
+
   section#servicebottomsec {
     z-index: 9;
+
     .row {
       align-items: center !important;
     }
   }
 }
+
 div#page-management-maintenance {
   .expertiseContent .subHead p {
     background: transparent;
@@ -347,38 +393,47 @@ div#page-management-maintenance {
     font-weight: 600;
     font-size: 20px !important;
   }
+
   .expertiseContent .title {
     padding-top: 5px !important;
   }
+
   section#phase3 {
     background: linear-gradient(359.91deg, #e6e2ff 0.09%, #ffffff 75.75%);
     padding-bottom: 100px;
   }
+
   section.content-with-video {
     background: #fff !important;
     padding-bottom: 0;
+
     .categoryboxes {
       display: none;
     }
   }
+
   #servicesColorSec {
     .content {
       padding: 100px 0 155px;
     }
   }
+
   section#phase4 {
     margin-top: -100px;
     background: #fff;
     position: relative;
     border-radius: 100px 0 0 0;
   }
+
   section#servicebottomsec {
     z-index: 9;
+
     .row {
       align-items: center !important;
     }
   }
 }
+
 div#page-clickup-consultants {
   .expertiseContent .subHead p {
     background: transparent;
@@ -387,28 +442,33 @@ div#page-clickup-consultants {
     font-weight: 600;
     font-size: 20px !important;
   }
+
   section.clickup {
-    background: linear-gradient(
-      180deg,
-      #f5f5f5 66.92%,
-      #ffffff 100%
-    ) !important;
+    background: linear-gradient(180deg,
+        #f5f5f5 66.92%,
+        #ffffff 100%) !important;
   }
+
   .expertiseContent .title {
     padding-top: 5px !important;
   }
+
   section.clickup {
     position: relative;
   }
+
   section.rating {
     display: none;
   }
+
   section.clickup {
     .content p {
       color: #545263;
     }
   }
+
   .servBoxes {
+
     .clickBox:nth-child(1),
     .clickBox:nth-child(2),
     .clickBox:nth-child(3),
@@ -420,13 +480,16 @@ div#page-clickup-consultants {
   section.upficient-testimonial-wrapper {
     background: linear-gradient(180deg, #a064ff 0%, #ffffff 100%) !important;
     padding-top: 180px;
+
     &::before {
       opacity: 1;
       width: 75%;
     }
+
     .testimonialhead h2 {
       color: #402e63;
     }
+
     p.testimonial-text,
     .testimonial-meta strong.meta-name,
     .testimonial-meta span.meta-company {
@@ -434,6 +497,7 @@ div#page-clickup-consultants {
     }
   }
 }
+
 div#page-clickup-onboarding-service {
   .expertiseContent .subHead p {
     background: transparent;
@@ -442,47 +506,60 @@ div#page-clickup-onboarding-service {
     font-weight: 600;
     font-size: 20px !important;
   }
+
   .expertiseContent .title {
     padding-top: 5px !important;
   }
+
   section#phase4 {
     background: linear-gradient(359.91deg, #e6e2ff 0.09%, #ffffff 75.75%);
     padding-bottom: 100px;
   }
+
   section#phase5 {
     margin-top: -100px;
     background: #fff;
     position: relative;
     border-radius: 100px 0 0 0;
   }
+
   section.content-with-video {
     background: #fff !important;
     padding-bottom: 0;
+
     .categoryboxes {
       display: none;
     }
   }
+
   section#servicesColorSec {
     padding: 0;
+
     .col-lg-7.col-md-7 {
       padding: 0;
     }
+
     .content {
       padding: 120px 60px 220px 0;
     }
+
     .container {
       max-width: 100%;
     }
+
     .img {
       height: 100%;
       margin-top: -68px;
+
       img {
         object-position: left -28px;
       }
     }
   }
+
   section#servicebottomsec {
     z-index: 9;
+
     .row {
       align-items: center !important;
     }
@@ -493,50 +570,64 @@ div#page-about-upficient-experts {
   .heroSection {
     background: linear-gradient(4.45deg, #e6e2ff 3.47%, #ffffff 82.53%);
   }
+
   section#chrisdetailsec .heading {
     display: none;
   }
+
   section#botomaboutsect {
     border-radius: 0 100px 0 0;
   }
+
   section#chrisdetailsec .para h4 {
     color: #fff;
     line-height: 34px;
   }
+
   section#chrisdetailsec p.chrisdetails {
     color: #402e63 !important;
     font-weight: 600;
     padding-bottom: 0;
   }
+
   section#chrisdetailsec p.chrisdesignation {
     padding-top: 8px !important;
     font-size: 17px;
     color: #402e63 !important;
   }
+
   section#passionatesection {
-    padding-bottom: 0;
+    padding-bottom: 0 !important;
   }
+
   section#passionatesection .row {
     flex-direction: column-reverse !important;
   }
+
   section#passionatesection img.img-contain {
+    vertical-align: bottom;
     object-position: bottom;
   }
-  section#passionatesection .col-lg-5.col-md-5 {
+
+  section#passionatesection .col-lg-5.col-md-12 {
     width: 100% !important;
     flex: 100% !important;
     max-width: 60%;
     text-align: center;
   }
+
   section.teamSec {
     background: #b080ff;
   }
+
   section.teamSec .heading h2 {
     color: #fff;
   }
+
   section.teamSec .empText p {
     padding-top: 12px !important;
   }
+
   section.teamSec .empDesignation p {
     font-weight: 600;
   }
@@ -545,24 +636,30 @@ div#page-about-upficient-experts {
     max-width: 100%;
     padding: 0;
   }
+
   section#passionatesection .container .align-items-center {
     align-items: flex-start !important;
   }
-  section#passionatesection .container .col-lg-5.col-md-5 {
+
+  section#passionatesection .container .col-lg-5.col-md-12 {
     margin: 0 auto;
   }
+
   section.logo-slider {
     margin-top: -100px !important;
   }
+
   section#passionatesection .container .para p {
     padding-bottom: 0 !important;
     color: #402e63 !important;
   }
 }
+
 @media screen and (max-width: 767px) {
   div#page-home .colorbgSec {
     padding: 70px 0 150px !important;
   }
+
   div#page-clickup-onboarding-service {
     section#servicesColorSec {
       .content {
@@ -570,11 +667,49 @@ div#page-about-upficient-experts {
       }
     }
   }
+
+  div#page-about-upficient-experts {
+    .heroSection {
+      .heroBackground {
+        display: none;
+      }
+    }
+  }
+
+  div#page-clickup-workspace-optimization {
+
+    .colorbgSec,
+    .colorwithoutbgSec {
+      padding-bottom: 200px !important;
+    }
+  }
+
+   div#page-clickup-integrations {
+
+    .colorbgSec,
+    .colorwithoutbgSec {
+      padding-bottom: 200px !important;
+    }
+  }
+
+  section#passionatesection .col-lg-5.col-md-12 {
+    max-width: 100% !important;
+  }
+
+  div#page-case-study {
+    .heroSection {
+      .heroBackground {
+        display: none;
+      }
+    }
+  }
 }
+
 .paginationWrapper {
   display: flex;
   justify-content: center;
   margin-top: 40px;
+
   .pagination button {
     font-family: "poppins";
     height: 50px;
@@ -619,27 +754,34 @@ div#page-about-upficient-experts {
   font-size: 18px;
   color: #8b5cf6;
 }
+
 button.pageCircle.arrow:hover {
   background: transparent;
   border: 1px solid #8b5cf6 !important;
 }
+
 .table-container {
   padding-top: 20px !important;
   padding-bottom: 20px !important;
 }
+
 .casestudybottom {
   position: relative;
   z-index: 1;
   background: #fff;
 }
+
 .caseInfo {
   padding: 0;
 }
+
 div#page-the-company-films {
-  section.pb-section + section.cs-slider-section {
+  section.pb-section+section.cs-slider-section {
     padding-top: 80px;
   }
+
   .pb-section__stats {
+
     .pb-section__stat:nth-child(3) span.pb-section__stat-icon,
     .pb-section__stat:nth-child(4) span.pb-section__stat-icon,
     .pb-section__stat:nth-child(8) span.pb-section__stat-icon {
@@ -647,11 +789,14 @@ div#page-the-company-films {
     }
   }
 }
+
 div#page-the-ola-agency {
-  section.pb-section + section.cs-slider-section {
+  section.pb-section+section.cs-slider-section {
     padding-top: 80px;
   }
+
   .pb-section__stats {
+
     .pb-section__stat:nth-child(3) span.pb-section__stat-icon,
     .pb-section__stat:nth-child(4) span.pb-section__stat-icon,
     .pb-section__stat:nth-child(8) span.pb-section__stat-icon {
@@ -659,11 +804,14 @@ div#page-the-ola-agency {
     }
   }
 }
+
 div#page-digifist {
-  section.pb-section + section.cs-slider-section {
+  section.pb-section+section.cs-slider-section {
     padding-top: 80px;
   }
+
   .pb-section__stats {
+
     .pb-section__stat:nth-child(4) span.pb-section__stat-icon,
     .pb-section__stat:nth-child(5) span.pb-section__stat-icon,
     .pb-section__stat:nth-child(9) span.pb-section__stat-icon {
@@ -671,11 +819,14 @@ div#page-digifist {
     }
   }
 }
+
 div#page-lento-agency {
-  section.pb-section + section.cs-slider-section {
+  section.pb-section+section.cs-slider-section {
     padding-top: 80px;
   }
+
   .pb-section__stats {
+
     .pb-section__stat:nth-child(4) span.pb-section__stat-icon,
     .pb-section__stat:nth-child(5) span.pb-section__stat-icon,
     .pb-section__stat:nth-child(9) span.pb-section__stat-icon {
@@ -683,11 +834,14 @@ div#page-lento-agency {
     }
   }
 }
+
 div#page-moms-for-liberty {
-  section.pb-section + section.cs-slider-section {
+  section.pb-section+section.cs-slider-section {
     padding-top: 80px;
   }
+
   .pb-section__stats {
+
     .pb-section__stat:nth-child(4) span.pb-section__stat-icon,
     .pb-section__stat:nth-child(5) span.pb-section__stat-icon,
     .pb-section__stat:nth-child(9) span.pb-section__stat-icon {
@@ -695,9 +849,11 @@ div#page-moms-for-liberty {
     }
   }
 }
+
 .caseInfo {
   padding: 50px 0 !important;
 }
+
 span.pb-section__stat-icon {
   display: none;
 }

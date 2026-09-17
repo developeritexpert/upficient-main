@@ -65,7 +65,7 @@ const SectionWithBg: React.FC<{ data: any }> = ({ data }) => {
     >
       <div className="container">
         <div
-          className={`row  ${
+          className={`row mx-0 ${
             styles?.alignIteam == "flex-end"
               ? "align-items-end"
               : "align-items-center"
@@ -75,7 +75,7 @@ const SectionWithBg: React.FC<{ data: any }> = ({ data }) => {
               styles.alignment == "right" ? "row-reverse" : undefined,
           }}
         >
-          <div className="col-lg-7 col-md-7">
+          <div className="col-lg-7 col-md-12">
             <div
               className="img"
               style={
@@ -103,7 +103,7 @@ const SectionWithBg: React.FC<{ data: any }> = ({ data }) => {
               </Link>
             </div>
           </div>
-          <div className="col-lg-5 col-md-5">
+          <div className="col-lg-5 col-md-12">
             <div className="content">
               <div className="heading">
                 {styles.headingTag === "h1" ? (
@@ -127,13 +127,13 @@ const SectionWithBg: React.FC<{ data: any }> = ({ data }) => {
               {buttonText && (
                 <div
                   className="btn"
-                  style={{
-                    margin: `${styles?.btnMargin?.top || 0}px ${
-                      styles?.btnMargin?.right || 0
-                    }px ${styles?.btnMargin?.bottom || 0}px ${
-                      styles?.btnMargin?.left || 0
-                    }px`,
-                  }}
+                  // style={{
+                  //   margin: `${styles?.btnMargin?.top || 0}px ${
+                  //     styles?.btnMargin?.right || 0
+                  //   }px ${styles?.btnMargin?.bottom || 0}px ${
+                  //     styles?.btnMargin?.left || 0
+                  //   }px`,
+                  // }}
                 >
                   <Link
                     href={buttonLink}

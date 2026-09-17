@@ -22,7 +22,7 @@ const ContentWithVideo: React.FC<{ data: any }> = ({ data }) => {
     >
       <div className="content-with-video-wrapper">
         <div className="container">
-          <div className="row align-items-center">
+          <div className="row mx-0 align-items-center">
             <div className="col-lg-6">
               <div className="content-with-video-content-wrapper">
                 <div className="content-video-head">
@@ -48,7 +48,7 @@ const ContentWithVideo: React.FC<{ data: any }> = ({ data }) => {
       </div>
       <div className="categoryboxes">
         <div className="container">
-          <div className="row">
+          <div className="row mx-0">
             <div className="col-lg-12">
               <div className="d-flex categoryboxes-main">
                 {data?.cetagories?.map((category: any, index: number) => (

@@ -30,3 +30,9 @@ section.logo-slider {
 .logo-slider-inner .logo-swiper {
   margin-bottom: 60px;
 }
+
+@media (max-width: 767px){
+    .logo-slider-inner .logo-swiper {
+        margin-bottom: 0px;
+    }
+}

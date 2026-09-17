@@ -62,7 +62,7 @@ const HeroSection: React.FC<{ data: any }> = ({ data }) => {
         />
       )}
       <div className="container position-relative" style={{ zIndex: 2 }}>
-        <div className="row align-items-center">
+        <div className="row mx-0 align-items-center">
           <div className="col-lg-6 col-md-6">
             <div className="heroContent">
               <div className="heading">
