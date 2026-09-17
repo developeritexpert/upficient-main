@@ -28,6 +28,8 @@
 @media screen and (max-width: 768px) {
   .clickup {
     .servBoxes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       margin-top: 50px;
     }
   }
@@ -37,7 +39,10 @@
 }
 @media screen and (max-width: 576px) {
   .clickup {
-    .servBoxes > div {
+    .servBoxes{
+      grid-template-columns: 1fr;
+    }
+    &> div {
       flex: 0 100%;
     }
   }

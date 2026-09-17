@@ -5,191 +5,149 @@ import { getImagePath } from "@/services/common.service";
 import Image from "next/image";
 import Link from "next/link";
 import "./footer.scss";
-import LazyMap from "@/components/miscellaneous/LazyMap/LazyMap";
 import YoutubeIcon from "@/components/Icons/YoutubeIcon";
-import FooterClient from "./footerClient";
-
 
 const Footer = async () => {
-  const menuItems = [
-    { name: "ClickUp Onboarding", href: "/clickup-onboarding-service" },
-    { name: "Workspace Optimization", href: "/clickup-workspace-optimization" },
-    { name: "ClickUp Integrations", href: "/clickup-integrations" },
+  const menuItemsServices = [
+    { name: "Workspace Architecture", href: "/clickup-onboarding-service" },
+    { name: "Operating Systems", href: "/clickup-templates/product-category/operating-systems/" },
+    { name: "Automation & Integrations", href: "/clickup-integrations" },
     { name: "ClickUp Consulting", href: "/clickup-consultants" },
   ];
+
   const menuTemplates = [
-    { name: "Templates by Organisation", href: "/clickup-templates/product-category/organizations/" },
-    { name: "Template by Function", href: "/clickup-templates/product-category/function/" },
-    { name: "Operating Systems", href: "/clickup-templates/product-category/operating-systems/" },
-    { name: "Annual Subscription", href: "/clickup-templates/subscriber/" },
+    { name: "Premium Plus", href: "/clickup-templates/subscriber/" },
+    { name: "By organisation", href: "/clickup-templates/product-category/organizations/" },
+    { name: "By function", href: "/clickup-templates/product-category/function/" },
+    { name: "Operating systems", href: "/clickup-templates/product-category/operating-systems/" },
   ];
+
   const menuItemsCompare = [
-    { name: "ClickUp vs. Asana", href: "/clickup-guides/clickup-vs-asana" },
-    { name: "ClickUp vs. Monday.com", href: "/clickup-guides/clickup-vs-monday" },
-    { name: "ClickUp vs. Trello", href: "/clickup-guides/clickup-vs-trello" },
-    { name: "ClickUp vs. Notion", href: "/clickup-guides/clickup-vs-notion" },
+    { name: "ClickUp vs Asana", href: "/clickup-guides/clickup-vs-asana" },
+    { name: "ClickUp vs Monday", href: "/clickup-guides/clickup-vs-monday" },
+    { name: "ClickUp vs Trello", href: "/clickup-guides/clickup-vs-trello" },
+    { name: "ClickUp vs Notion", href: "/clickup-guides/clickup-vs-notion" },
   ];
-  const menuItemsConnect = [
-    { name: "Contact Us", href: "/contact" },
-    {
-      name: "Free Consultation",
-      href: "https://calendly.com/upficient-consultation/30min-free-consultation?month=2025-01",
-    },
-  ];
-  const menuItemsLegal = [
-    {
-      name: "Privacy Policy",
-      href: "/clickup-templates/privacy-policy/",
-      newTab: true,
-    },
-    {
-      name: "Terms & Conditions",
-      href: "/clickup-templates/terms-conditions-of-purchase/",
-      newTab: true,
-    },
-    {
-      name: "Refund Policy",
-      href: "/clickup-templates/refund-returns/",
-      newTab: true,
-    },
-    {
-      name: "Cookie Settings",
-      href: "",
-      newTab: false,
-    },
-  ];
-  const menuItemsLearn = [
-    { name: "About Us", href: "/about-upficient-experts" },
+
+  const menuItemsCompany = [
+    { name: "About us", href: "/about-upficient-experts" },
+    { name: "Case studies", href: "/case-study" },
     { name: "Guides", href: "/clickup-guides" },
-    { name: "Case Studies", href: "/case-study" },
-    {
-      name: "ClickUp in 2025: The Ultimate Guide",
-      href: "/clickup-guides/clickup-in-2025-the-ultimate-guide",
-    },
-    {
-      name: "How to Use ClickUp: Full ClickUp Tutorial",
-      href: "/clickup-guides/how-to-use-clickup-full-clickup-tutorial",
-    },
+    { name: "FAQs", href: "/faq" },
+  ];
+
+  const menuItemsLegal = [
+    { name: "Privacy", href: "/clickup-templates/privacy-policy/", newTab: true },
+    { name: "Terms", href: "/clickup-templates/terms-conditions-of-purchase/", newTab: true },
+    { name: "Refunds", href: "/clickup-templates/refund-returns/", newTab: true },
   ];
 
   return (
-    <>
-      <footer className="footer">
-        <div className="container-fluid">
-          <div className="row mx-0">
-            <div className="column column-40">
-              <div className="logo">
-                <Image
-                  src={getImagePath("logomain.webp")}
-                  width={500}
-                  height={500}
-                  alt="Upficient logo"
-                  className="img-contain"
-                  loading="lazy"
-                  unoptimized
-                />
-              </div>
-              <div className="para">
-                <p>
-                  Solutions architecture agency specialising in ClickUp workspace building, ClickUp
-                  optimization and workflow automation.
-                </p>
-              </div>
-              <div className="footerText">
-                <h4>Our Networks</h4>
-              </div>
-              <div className="socialIcons d-flex">
-                <Link
-                  href="https://clutch.co/profile/upficient"
-                  target="_blank"
-                  aria-label="Clutch link"
-                >
-                  <ClutchIcon />
-                </Link>
-                <Link
-                  href="https://www.linkedin.com/company/upficient"
-                  target="_blank"
-                  aria-label="LinkedIn link"
-                >
-                  <LinkdinIcon />
-                </Link>
-                <Link
-                  href="https://www.youtube.com/@Upficient"
-                  target="_blank"
-                  aria-label="YouTube link"
-                >
-                  <YoutubeIcon />
-                </Link>
-              </div>
-            </div>
+    <footer className="footer">
+      <div className="footer-container">
+        {/* ── Top CTA strip ─────────────────────────────── */}
+        <div className="footer-top">
+          <div className="footer-top-copy">
+            <h2>Turn chaos into a system your team runs on.</h2>
+            <p>Book a free consultation, or browse the template store.</p>
+          </div>
+          <div className="footer-top-actions">
+            <Link
+              className="btn-solid"
+              target="_blank"
+              href="https://calendly.com/upficient_christopher-day/template-store"
+            >
+              Book a free call
+            </Link>
+            <Link className="btn-outline" href="#templates">
+              Browse templates
+            </Link>
+          </div>
+        </div>
 
-            <div className="column column-20">
-              <div className="listbox">
-                <h3>Services</h3>
-                <ListItems items={menuItems} />
-              </div>
-              <div className="listbox">
-                <h3>Templates</h3>
-                <ListItems items={menuTemplates} />
-              </div>
-            </div>
+        <div className="footer-divider" />
 
-            <div className="column column-20">
-              <div className="listbox">
-                <h3>Compare</h3>
-                <ListItems items={menuItemsCompare} />
-              </div>
-              <div className="listbox">
-                <h3>Connect</h3>
-                <ListItems items={menuItemsConnect} />
-                {/* Newsletter Signup rendered as interactive client button */}
-                <FooterClient />
-              </div>
-              <div className="listbox">
-                <h3>Legal</h3>
-                <ListItems items={menuItemsLegal} />
-              </div>
+        {/* ── Brand + link columns ──────────────────────── */}
+        <div className="footer-main">
+          <div className="footer-brand">
+            <div className="logo">
+              <Image
+                src={getImagePath("footer-logo.png")}
+                width={500}
+                height={500}
+                alt="Upficient logo"
+                className="img-contain"
+                loading="lazy"
+                unoptimized
+              />
             </div>
+            <p className="brand-desc">
+              Holistic ClickUp system design. Architecture, automation, AI enablement, and
+              operating system builds - for teams that take their ClickUp setup seriously.
+            </p>
+            <div className="socialIcons d-flex">
+              <Link href="https://clutch.co/profile/upficient" target="_blank" aria-label="Clutch link">
+                <ClutchIcon />
+              </Link>
+              <Link href="https://www.linkedin.com/company/upficient" target="_blank" aria-label="LinkedIn link">
+                <LinkdinIcon />
+              </Link>
+              <Link href="https://www.youtube.com/@Upficient" target="_blank" aria-label="YouTube link">
+                <YoutubeIcon />
+              </Link>
+            </div>
+          </div>
 
-            <div className="column column-20">
-              <div className="listbox">
-                <h3>Learn</h3>
-                <ListItems items={menuItemsLearn} />
-              </div>
-              <div className="col text-center footerlogos">
-                <Image
-                  src={getImagePath("verified-Ambassador-v3-3.png")}
-                  width={500}
-                  height={500}
-                  alt="Verified Ambassador badge"
-                  className="img-contain"
-                  loading="lazy"
-                  unoptimized
-                />
-                <Image
-                  src={getImagePath("verifieldclickup.png")}
-                  width={500}
-                  height={500}
-                  alt="Verified ClickUp badge"
-                  className="img-contain"
-                  loading="lazy"
-                  unoptimized
-                />
-                <Image
-                  src={getImagePath("certificate-wt34kk2dgmun-1753795545-1-1-1.png")}
-                  width={500}
-                  height={500}
-                  alt="ClickUp certificate"
-                  className="img-contain"
-                  loading="lazy"
-                  unoptimized
-                />
-              </div>
+          <div className="footer-links">
+            <div className="footer-col">
+              <h4>Services</h4>
+              <ListItems items={menuItemsServices} />
+            </div>
+            <div className="footer-col">
+              <h4>Templates</h4>
+              <ListItems items={menuTemplates} />
+            </div>
+            <div className="footer-col">
+              <h4>Compare</h4>
+              <ListItems items={menuItemsCompare} />
+            </div>
+            <div className="footer-col">
+              <h4>Company</h4>
+              <ListItems items={menuItemsCompany} />
             </div>
           </div>
         </div>
-      </footer>
-    </>
+
+        <div className="footer-divider" />
+
+        {/* ── Newsletter row ─────────────────────────────── */}
+        <div className="footer-newsletter">
+          <div className="newsletter-copy">
+            <h3>Join the Upficient insider club</h3>
+            <p>ClickUp tips, new guides, and 10% off your first template order.</p>
+          </div>
+          <form className="newsletter-form">
+            <input type="email" name="email" placeholder="you@company.com" required />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+
+        <div className="footer-divider" />
+
+        {/* ── Bottom bar ──────────────────────────────────── */}
+        <div className="footer-bottom">
+          <div className="footer-bottom-left">
+            <span className="copyright">© 2026 Upficient LLC · Dover, Delaware</span>
+            {menuItemsLegal.map((item, i) => (
+              <Link key={i} href={item.href} target={item.newTab ? "_blank" : undefined}>
+                {item.name}
+              </Link>
+            ))}
+          </div>
+          <span className="partner-badge">ClickUp Solutions Partner</span>
+        </div>
+      </div>
+    </footer>
   );
 };
 
