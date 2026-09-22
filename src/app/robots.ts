@@ -68,7 +68,7 @@ export default function robots(): MetadataRoute.Robots {
 
     sitemap: [
       `${url}/sitemap.xml`,
-      `${url}/clickup-templates/page-sitemap.xml`,
+      `${url}/clickup-templates/sitemap_index.xml`,
     ],
   };
 }
