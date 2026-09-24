@@ -344,7 +344,7 @@ const Header = () => {
           href: "/clickup-guides/clickup-in-2025-the-ultimate-guide",
         },
       ],
-      sidebarFooterLink: { label: "All guides →", href: "/clickup-guides" },
+      // sidebarFooterLink: { label: "All guides →", href: "/clickup-guides" },
       listTitle: "Featured Guides",
       listType: "template" as const,
       listItems: [
