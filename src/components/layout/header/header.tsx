@@ -267,7 +267,7 @@ const Header = () => {
           description:
             "Train your team on ClickUp with a structured onboarding system and documented SOPs.",
           tag: "Onboarding",
-          href: "/clickup-onboarding-service/",
+          href: "/clickup-templates/product/clickup-onboarding/",
         },
         {
           icon: faBullseye,
@@ -276,7 +276,7 @@ const Header = () => {
           description:
             "Quarterly objectives, key results, check-ins, and leadership dashboards.",
           tag: "Operating system",
-          href: "/clickup-workspace-optimization/",
+          href: "/clickup-templates/product/objectives-and-key-results-advanced/",
         },
         {
           icon: faBullhorn,
