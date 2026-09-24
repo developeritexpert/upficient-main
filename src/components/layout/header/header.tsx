@@ -195,6 +195,11 @@ const Header = () => {
               label: "Healthcare",
               href: "/clickup-templates/product-category/organizations/healthcare-services/",
             },
+            {
+              icon: faLayerGroup,
+              label: "+ much more",
+              href: "/clickup-templates/product-category/organizations/",
+            },
           ],
         },
         {
@@ -219,6 +224,11 @@ const Header = () => {
               icon: faHeadset,
               label: "Support tickets",
               href: "/clickup-templates/product-category/function/support/",
+            },
+            {
+              icon: faLayerGroup,
+              label: "+ much more",
+              href: "/clickup-templates/product-category/function/",
             },
           ],
         },
