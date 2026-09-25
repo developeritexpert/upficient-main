@@ -192,6 +192,25 @@
 
 /* ── Mega menu shell ──────────────────────────────────────── */
 #header {
+
+  .grid-main-label{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px 16px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #A064FF;
+    text-decoration: none;
+    border-top: 0.5px solid #E8E0F5;
+    margin-top: 6px;
+    transition: all .2s linear;
+
+    &:hover{
+      color: #045cb4;
+    }
+  }
+
   .mega-menu {
     display: none;
     position: absolute;

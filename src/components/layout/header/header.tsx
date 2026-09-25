@@ -131,6 +131,8 @@ const Header = () => {
       href: "/our-services/",
       type: "grid" as const,
       sectionLabel: "Our Services",
+      sectionMainLink: "/our-services/",
+      sectionMainLinkLabel: "All Services →",
       cards: [
         {
           icon: faLandmark,
@@ -469,6 +471,12 @@ const Header = () => {
   const renderGridMenu = (item: any) => (
     <div className="mega-menu mega-menu--grid">
       <p className="mega-eyebrow">{item.sectionLabel}</p>
+      {item.sectionMainLink && (
+          <Link href={item.sectionMainLink} className="grid-main-label">
+            <FontAwesomeIcon icon={faGrip} />
+            {item.sectionMainLinkLabel}
+          </Link>
+      )}
       <div className="mega-grid">
         {item.cards.map((card: any, index: number) => (
           <Link href={card.href} className={`mega-card`} key={index}>
