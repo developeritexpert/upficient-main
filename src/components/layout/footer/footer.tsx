@@ -59,7 +59,7 @@ const Footer = async () => {
             >
               Book a free call
             </Link>
-            <Link className="btn-outline" href="#templates">
+            <Link className="btn-outline" href="/clickup-templates/">
               Browse templates
             </Link>
           </div>
