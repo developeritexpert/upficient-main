@@ -136,7 +136,8 @@ const SectionWithBg: React.FC<{ data: any }> = ({ data }) => {
                   // }}
                 >
                   <Link
-                    href={buttonLink}
+                    href="https://calendly.com/upficient-consultation/clickup-consulting"
+                    target="_blank"
                     style={{
                       color: styles.buttonTextColor,
                       backgroundColor: styles.buttonColor,
