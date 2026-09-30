@@ -92,7 +92,7 @@ const HeroSection: React.FC<{ data: any }> = ({ data }) => {
                   }}
                 >
                   <Link
-                    href={data?.buttonLink || "#"}
+                    href="https://calendly.com/upficient-consultation/clickup-consulting"
                     className="btn-link"
                     style={{
                       backgroundColor: styles.buttonColor || undefined,
